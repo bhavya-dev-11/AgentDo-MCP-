@@ -1,0 +1,23 @@
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+.gitignore
+.env
+.env.*
+.vscode
+.idea
+coverage
+.nyc_output
+dist
+build
+*.log
+*.pid
+*.seed
+*.tsbuildinfo
+
+# Project-specific
+prisma/dev.db
+prisma/dev.db-journal
+generated/
