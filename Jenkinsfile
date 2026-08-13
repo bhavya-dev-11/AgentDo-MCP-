@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Install') {
             steps {
-                echo 'Hello from AgentDo Jenkins!'
+                sh 'npm ci'
             }
         }
     }
