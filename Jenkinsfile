@@ -2,10 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Check') {
+        stage('Install') {
             steps {
-                sh 'node --version'
-                sh 'npm --version'
+                sh 'npm ci'
             }
         }
     }
