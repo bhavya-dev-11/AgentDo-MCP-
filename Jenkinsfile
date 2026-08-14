@@ -1,15 +1,13 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'Node22'
+    environment {
+        DATABASE_URL = credentials('database-url')
     }
 
     stages {
         stage('Install') {
             steps {
-                sh 'node --version'
-                sh 'npm --version'
                 sh 'npm ci'
             }
         }
@@ -23,7 +21,7 @@ pipeline {
         stage('Docker Run') {
             steps {
                 sh 'docker rm -f agentdo || true'
-                sh 'docker run -d --name agentdo -p 8000:8000 agentdo'
+                sh 'docker run -d --name agentdo -p 8000:8000 -e DATABASE_URL="$DATABASE_URL" agentdo'
             }
         }
     }
