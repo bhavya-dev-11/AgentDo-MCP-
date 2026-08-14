@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'Node22'
+    }
+    
     environment {
         DATABASE_URL = credentials('database-url')
     }
