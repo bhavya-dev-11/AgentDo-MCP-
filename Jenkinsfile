@@ -19,5 +19,12 @@ pipeline {
                 sh 'docker build -t agentdo .'
             }
         }
+
+        stage('Docker Run') {
+            steps {
+                sh 'docker rm -f agentdo || true'
+                sh 'docker run -d --name agentdo -p 8000:8000 agentdo'
+            }
+        }
     }
 }
