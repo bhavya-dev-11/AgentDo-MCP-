@@ -3,3 +3,27 @@ node_modules
 .env
 
 /generated/prisma
+
+# Claude / AI-generated local files
+.agents/
+.claude/
+.windsurf/
+.claude*
+claude*
+*.claude
+*.md
+!README.md
+
+# Editor / OS junk
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+
+# Local runtime/cache files
+.cache/
+.tmp/

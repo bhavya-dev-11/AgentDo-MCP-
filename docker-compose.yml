@@ -1,0 +1,12 @@
+services:
+  agentdo:
+    build: .
+    container_name: agentdo-container
+
+
+    ports:
+      - "8000:8000"
+
+
+    env_file:
+      - .env
